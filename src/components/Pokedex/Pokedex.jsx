@@ -64,12 +64,12 @@ const Pokedex = () => {
       ? allPokemonList.filter((pokemon) => pokemon.name.toLowerCase().includes(searchTerm.toLowerCase()))
       : allPokemonList;
 
-    // Filtrar por tipos seleccionados
+
     const filteredByType = selectedTypes.length > 0
       ? filteredBySearch.filter((pokemon) => pokemon.details.types.some((type) => selectedTypes.includes(type.type.name)))
       : filteredBySearch;
 
-      // Calcular el rango de Pokémon a mostrar en la página actual
+  
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     const limitedPokemonList = filteredByType.slice(startIndex, endIndex);
@@ -131,7 +131,6 @@ const Pokedex = () => {
   };
 
   const getAllPokemonTypes = () => {
-    // Obten todos los tipos únicos de Pokémon de la lista completa
     const allTypes = allPokemonList
       .flatMap((pokemon) => pokemon.details.types.map((type) => type.type.name))
       .filter((value, index, self) => self.indexOf(value) === index);
