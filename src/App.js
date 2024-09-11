@@ -1,4 +1,4 @@
-// App.js (o tu archivo principal)
+
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Pokedex from './components/Pokedex/Pokedex';
